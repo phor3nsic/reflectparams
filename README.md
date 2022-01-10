@@ -30,6 +30,6 @@ Or check of stdin
 cat /tmp/urls | reflectparams -p FUZZ
 ```
 
-**Hint:
+### Hint:
 
-Use output of paramspider with this app!**
+*Use output of paramspider with this app!*
