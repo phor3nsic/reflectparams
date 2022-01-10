@@ -5,7 +5,7 @@
 ## Install
 
 ```
-go install github.com/phor3nsic/reflectparams
+go install github.com/phor3nsic/reflectparams@latest
 ```
 ## Usage
 
