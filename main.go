@@ -14,6 +14,10 @@ func main() {
 	flag.StringVar(&param, "p", "", "Param to check")
 	flag.StringVar(&listToTest, "l", "", "List Of Urls")
 	flag.Parse()
-	read.ReadFile(listToTest, param)
+	if listToTest != "" {
+		read.ReadFile(listToTest, param)
+	} else {
+		read.ReadStdin(param)
+	}
 
 }

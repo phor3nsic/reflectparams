@@ -32,3 +32,13 @@ func ReadFile(path string, param string) {
 	}
 
 }
+
+func ReadStdin(param string) {
+	var line string
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		line = scanner.Text()
+		request.Req(line, param)
+	}
+
+}
