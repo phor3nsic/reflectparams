@@ -1,12 +1,14 @@
 package request
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strings"
 )
 
-func Req(url string) {
+func Req(url string, param string) {
 	resp, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
@@ -18,5 +20,8 @@ func Req(url string) {
 	}
 
 	sb := string(body)
-	log.Printf(sb)
+	if strings.Contains(sb, param) {
+		fmt.Println(url)
+	}
+
 }
