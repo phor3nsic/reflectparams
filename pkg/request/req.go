@@ -18,10 +18,10 @@ func Req(url string, param string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	out := fmt.Sprintf("{\"name\":\"Reflect Params\",\"severity\":\"info\",\"url\":\"%s\"}", url)
 	sb := string(body)
 	if strings.Contains(sb, param) {
-		fmt.Println(url)
+		fmt.Println(out)
 	}
 
 }
