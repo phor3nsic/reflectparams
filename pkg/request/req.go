@@ -21,7 +21,7 @@ func Req(url string, param string) {
 	var transport = &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 		DialContext: (&net.Dialer{
-			Timeout:   30 * time.Second,
+			Timeout:   20 * time.Second,
 			KeepAlive: time.Second,
 			DualStack: true,
 		}).DialContext,
@@ -36,6 +36,10 @@ func Req(url string, param string) {
 	}
 
 	resp, err := client.Get(url)
+	if err != nil {
+		return
+	}
+
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal(err)
