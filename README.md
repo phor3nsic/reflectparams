@@ -32,4 +32,6 @@ cat /tmp/urls | reflectparams -p FUZZ
 
 ### Hint:
 
-*Use output of paramspider with this app!*
+```
+echo hackerone.com | gauplus -subs | grep = | qsreplace FUZZ| reflectparams -p FUZZ
+```
