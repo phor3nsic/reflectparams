@@ -4,12 +4,14 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strings"
 	"sync"
 
+	"github.com/phor3nsic/reflectparams/pkg/globalvar"
 	"github.com/phor3nsic/reflectparams/pkg/request"
 )
 
-func ReadFile(path string, param string) {
+func ReadFile(path string) {
 	var wg sync.WaitGroup
 
 	var line string
@@ -28,7 +30,14 @@ func ReadFile(path string, param string) {
 		wg.Add(1)
 		go func(url string) {
 			defer wg.Done()
-			request.Req(url, param)
+			if globalvar.Inject != "" {
+				param := globalvar.Parameter + globalvar.Inject
+				changedUrl := strings.Replace(url, globalvar.Parameter, param, -1)
+				request.Req(changedUrl, param)
+			} else {
+				request.Req(url, globalvar.Parameter)
+			}
+
 		}(line)
 
 	}
@@ -41,7 +50,7 @@ func ReadFile(path string, param string) {
 
 }
 
-func ReadStdin(param string) {
+func ReadStdin() {
 	var wg sync.WaitGroup
 	var line string
 	scanner := bufio.NewScanner(os.Stdin)
@@ -50,7 +59,14 @@ func ReadStdin(param string) {
 		wg.Add(1)
 		go func(url string) {
 			defer wg.Done()
-			request.Req(url, param)
+			if globalvar.Inject != "" {
+				param := globalvar.Parameter + globalvar.Inject
+				changedUrl := strings.Replace(url, globalvar.Parameter, param, -1)
+				request.Req(changedUrl, param)
+			} else {
+				request.Req(url, globalvar.Parameter)
+			}
+
 		}(line)
 	}
 
