@@ -11,7 +11,7 @@
 
 <br>
   <!--Tweet button-->
-  <a href="https://twitter.com/intent/tweet?text=rreflectparams%20-%20Check%20if%20the%20param%20reflects%20in%20the%20body%20of%20the%20response!%20https%3A%2F%2Fgithub.com%2Fphor3nsic%2Freflectparams%20%23bash%20%23xss%20%23bugbounty%20%23bugbountytips%20%23infosec" target="_blank">Share on Twitter!
+  <a href="https://twitter.com/intent/tweet?text=reflectparams%20-%20Check%20if%20the%20param%20reflects%20in%20the%20body%20of%20the%20response!%20https%3A%2F%2Fgithub.com%2Fphor3nsic%2Freflectparams%20%23bash%20%23xss%20%23bugbounty%20%23bugbountytips%20%23infosec" target="_blank">Share on Twitter!
   </a>
 </p>
 
