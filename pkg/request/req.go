@@ -61,7 +61,7 @@ func Req(urlStr, param string, proxyAddr ...string) {
 
 	resp, err := client.Get(urlStr)
 	if err != nil {
-		log.Fatal("Error to make request::", err)
+		//log.Fatal("Error to make request::", err)
 		return
 	}
 
@@ -69,7 +69,7 @@ func Req(urlStr, param string, proxyAddr ...string) {
 
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Fatal("Error to read response:", err)
+		//log.Fatal("Error to read response:", err)
 		return
 	}
 
