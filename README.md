@@ -85,6 +85,6 @@ Just open an [issue](https://github.com/phor3nsic/reflectparams/issues) / [pull 
 License 📝
 -------
 
-This repository is under [MIT License](https://github.com/phor3nsic/reflectparams/blob/main/LICENSE).  
+This repository is under [MIT License](https://github.com/phor3nsic/reflectparams/blob/master/LICENSE).  
 [ph0r3nsic@wearehackerone.com](mailto:ph0r3nsic@wearehackerone.com) to contact me.
 
