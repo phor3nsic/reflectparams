@@ -36,16 +36,19 @@ Examples 💡
 
 ### Help
 ```
-➜ reflectparams -h
-
+➜  ~ reflectparams -h
+Usage of reflectparams:
+  -c int
+    	Concorrency value. (default 5)
   -i string
-      Inject special chars on parameter...
+    	Inject special chars on parameter. Ex: ['"><s>s]
   -l string
-      List Of Urls
+    	List of urls. Ex: /tmp/urls.txt
   -p string
-      Param to check
+    	Param to check. Ex: FUZZ
   -x string
-      Replay proxy requests
+    	Replay proxy requests. Ex: http://localhost:8080
+
 ```
 
 Chek of -l option
@@ -63,15 +66,15 @@ Or check of stdin
 
 You can inject and special chars and replay in your proxy:
 ```bash
-➜ refrecparams -l urls.txt -i "<svg>" -x http://localhost:8080
+➜ refrecparams -l urls.txt -i "'\"><svg/onload=alert(1)>" -x http://localhost:8080
 
-➜ echo https://public-firing-range.appspot.com/reflected/parameter/body?q=FUZZ | refrecparams -l urls.txt -i "<svg>" -x http://localhost:8080
+➜ echo https://public-firing-range.appspot.com/reflected/parameter/body?q=FUZZ | refrecparams -l urls.txt -i "'\"><svg/onload=alert(1)>" -x http://localhost:8080
 ```
 
 ### Hint:
 
 ```bash
-echo public-firing-range.appspot.com | gauplus -subs | grep = | qsreplace FUZZ| reflectparams -p FUZZ
+echo public-firing-range.appspot.com | gau -subs | grep = | qsreplace FUZZ| reflectparams -p FUZZ
 ```
 
 Contributing 🛠
