@@ -51,12 +51,12 @@ Usage of reflectparams:
 
 ```
 
-Chek of -l option
+Check with the -l option
 ```
 ➜ reflectparams -l /tmp/urls -p FUZZ
 ```
 
-Or check of stdin
+Or check from stdin
 
 ```
 ➜ cat /tmp/urls | reflectparams -p FUZZ
@@ -66,9 +66,9 @@ Or check of stdin
 
 You can inject and special chars and replay in your proxy:
 ```bash
-➜ refrecparams -l urls.txt -i "'\"><svg/onload=alert(1)>" -x http://localhost:8080
+➜ reflectparams -l urls.txt -i "'\"><svg/onload=alert(1)>" -x http://localhost:8080
 
-➜ echo https://public-firing-range.appspot.com/reflected/parameter/body?q=FUZZ | refrecparams -l urls.txt -i "'\"><svg/onload=alert(1)>" -x http://localhost:8080
+➜ echo 'https://public-firing-range.appspot.com/reflected/parameter/body?q=FUZZ' | reflectparams -p FUZZ -i "'\"><svg/onload=alert(1)>" -x http://localhost:8080
 ```
 
 ### Hint:
